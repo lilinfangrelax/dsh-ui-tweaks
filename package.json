@@ -1,0 +1,33 @@
+{
+  "name": "@local/dsh-ui-tweaks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Small usability tweaks for the default Harness Web UI: a floating fullscreen handle for phone browsers, and a permanently visible per-workspace new-session button so keyboard hint browsers can reach it.",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

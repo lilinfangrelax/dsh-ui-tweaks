@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "UI tweaks",
+    "description": "Two usability fixes for the default Harness Web UI: a floating fullscreen handle for phone browsers, and a permanently visible per-workspace new-session button that keyboard hint browsers can reach without hovering."
+  }
+}
