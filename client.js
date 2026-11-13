@@ -21,7 +21,7 @@
  */
 
 window.__ModuleLoader__.load({
-  id: '@local/dsh-ui-tweaks',
+  id: 'dsh-ui-tweaks',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
@@ -232,7 +232,7 @@ window.__ModuleLoader__.load({
     function applyRowActions(ctx) {
       ctx.effect(() => {
         const style = document.createElement('style');
-        style.dataset.dshPlugin = '@local/dsh-ui-tweaks';
+        style.dataset.dshPlugin = 'dsh-ui-tweaks';
         style.textContent = ROW_CSS;
         document.head.appendChild(style);
         return () => {

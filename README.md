@@ -1,5 +1,7 @@
 # dsh-ui-tweaks
 
+中文 | [English](README.en.md)
+
 对 DeepSeek Harness 默认 Web 界面的两处可用性微调，打包成一个 bundle 插件。
 
 两项改动互相独立，各自的 CSS 和逻辑都不引用对方，删掉任意一项不影响另一项。
@@ -30,24 +32,25 @@
 
 ## 安装
 
-包本身不发 npm，用本地路径装进 profile：
-
 ```sh
-dsh plugin --profile web add /path/to/dsh-ui-tweaks
+dsh plugin --profile web add github:lilinfangrelax/dsh-ui-tweaks
 ```
 
-`dsh plugin` 会把它写进 profile 的 `dependencies` 和 `dsh.profile.bundles`，重启 Web UI 生效。
+包名与仓库均为 `dsh-ui-tweaks`（插件 id 仍为 `ui-tweaks`）。
 
-只想先试用，可以装进另一个 profile，再用 `dsh --profile sandbox --port 3101` 单独起一个实例对照：
+也可以先克隆，再按本地路径安装：
 
 ```sh
-dsh plugin --profile sandbox add /path/to/dsh-ui-tweaks
+git clone https://github.com/lilinfangrelax/dsh-ui-tweaks.git
+dsh plugin --profile web add file:/path/to/dsh-ui-tweaks
 ```
+
+安装或升级后重启 Web UI 生效。
 
 卸载：
 
 ```sh
-dsh plugin --profile web remove @local/dsh-ui-tweaks
+dsh plugin --profile web remove dsh-ui-tweaks
 ```
 
 ## 工作原理
@@ -60,7 +63,7 @@ dsh plugin --profile web remove @local/dsh-ui-tweaks
 
 - 行用稳定的 `data-row-key^="workspace:"` 定位，操作组用 `_rowActions` 类名后缀定位，菜单按钮用 ARIA 属性定位，都不依赖上游的哈希类名
 - 声明带 `!important`，因为覆盖的是已发布样式表
-- `<style>` 带 `data-dsh-plugin="@local/dsh-ui-tweaks"`，插件卸载时随 `ctx.effect` 的清理函数一起移除
+- `<style>` 带 `data-dsh-plugin="dsh-ui-tweaks"`，插件卸载时随 `ctx.effect` 的清理函数一起移除
 
 ## 已知限制
 

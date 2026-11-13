@@ -1,8 +1,27 @@
 {
-  "name": "@local/dsh-ui-tweaks",
-  "version": "0.1.0",
-  "private": true,
+  "name": "dsh-ui-tweaks",
+  "version": "1.0.0",
   "description": "Small usability tweaks for the default Harness Web UI: a floating fullscreen handle for phone browsers, and a permanently visible per-workspace new-session button so keyboard hint browsers can reach it.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilinfangrelax/dsh-ui-tweaks.git"
+  },
+  "homepage": "https://github.com/lilinfangrelax/dsh-ui-tweaks#readme",
+  "bugs": {
+    "url": "https://github.com/lilinfangrelax/dsh-ui-tweaks/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "web-ui",
+    "fullscreen",
+    "accessibility"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
   "type": "module",
   "exports": {
     ".": "./index.js",
@@ -15,7 +34,10 @@
     "client.js",
     "cordis.patch.yml",
     "locale/*.json",
-    "icon.svg"
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
   ],
   "dsh": {
     "bundle": {
